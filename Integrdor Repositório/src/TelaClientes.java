@@ -214,7 +214,7 @@ public class TelaClientes extends JPanel {
 
         painelCardTabela.add(scrollPane, BorderLayout.CENTER);
         add(painelCardTabela, BorderLayout.CENTER);
-
+        //oi
         // -----------------------------------------------------------------
         // 3. RODAPÉ (PAGINAÇÃO E TOTAL CORRIGIDOS)
         // -----------------------------------------------------------------

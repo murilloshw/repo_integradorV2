@@ -16,7 +16,7 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
 public class App extends JFrame {
-//tipo é tipo hâ? tipo nada acvefuovf
+
     private TelaLogin telaLogin;
     private TelaClientes telaClientes;
     private JPanel conteudoCentralPadrao;

@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -18,7 +17,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
 public class TelaLogin extends JFrame {
@@ -60,7 +58,7 @@ public class TelaLogin extends JFrame {
         if (fundo != null && fundo.getImage() != null) {
             background.setIcon(fundo);
         } else {
-            background.setBackground(new Color(10, 12, 34));
+            background.setBackground(new Color(2, 12, 27));
             background.setOpaque(true);
         }
 
@@ -81,65 +79,57 @@ public class TelaLogin extends JFrame {
         JLabel emailLabel = new JLabel("E-MAIL");
         emailLabel.setFont(new Font("Arial", Font.BOLD, 22));
         emailLabel.setForeground(Color.WHITE);
+        emailLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         JTextField emailField = new JTextField();
-        emailField.setPreferredSize(new Dimension(400, 55));
+        emailField.setPreferredSize(new Dimension(400, 65));
+        emailField.setMaximumSize(new Dimension(400, 65));
         emailField.setFont(new Font("Arial", Font.PLAIN, 24));
         emailField.setBackground(new Color(18, 24, 58));
         emailField.setForeground(Color.WHITE);
         emailField.setCaretColor(Color.WHITE);
+        emailField.setAlignmentX(Component.CENTER_ALIGNMENT);
         emailField.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(new Color(116, 89, 255), 2),
+                BorderFactory.createLineBorder(new Color(24, 75, 150), 2),
                 BorderFactory.createEmptyBorder(5, 15, 5, 15)));
 
         // Campo senha
         JLabel senhaLabel = new JLabel("SENHA");
         senhaLabel.setFont(new Font("Arial", Font.BOLD, 22));
         senhaLabel.setForeground(Color.WHITE);
+        senhaLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         JPasswordField senhaField = new JPasswordField();
-        senhaField.setPreferredSize(new Dimension(400, 55));
+        senhaField.setPreferredSize(new Dimension(400, 65));
+        senhaField.setMaximumSize(new Dimension(400, 65));
         senhaField.setFont(new Font("Arial", Font.PLAIN, 24));
         senhaField.setBackground(new Color(18, 24, 58));
         senhaField.setForeground(Color.WHITE);
         senhaField.setCaretColor(Color.WHITE);
+        senhaField.setAlignmentX(Component.CENTER_ALIGNMENT);
         senhaField.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(new Color(116, 89, 255), 2),
+                BorderFactory.createLineBorder(new Color(24, 75, 150), 2),
                 BorderFactory.createEmptyBorder(5, 15, 5, 15)));
 
         // Botão entrar
         JButton entrarBtn = new JButton("ENTRAR");
         entrarBtn.setPreferredSize(new Dimension(400, 60));
+        entrarBtn.setMaximumSize(new Dimension(400, 60));
         entrarBtn.setFont(new Font("Arial", Font.BOLD, 26));
-        entrarBtn.setBackground(new Color(146, 84, 255));
+        entrarBtn.setBackground(new Color(24, 75, 150));
         entrarBtn.setForeground(Color.WHITE);
-        entrarBtn.setBorder(BorderFactory.createLineBorder(new Color(146, 84, 255), 1));
+        entrarBtn.setBorder(BorderFactory.createLineBorder(new Color(24, 75, 150), 1));
         entrarBtn.setFocusPainted(false);
         entrarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        entrarBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         // 2. AÇÃO PARA NAVEGAR PARA O APP PRINCIPAL
         entrarBtn.addActionListener(e -> abrirAppPrincipal());
 
-        // Texto inferior
-        JPanel rodape = new JPanel(new BorderLayout());
-        rodape.setOpaque(false);
-        rodape.setMaximumSize(new Dimension(420, 30));
-
-        JLabel esqueceu = new JLabel("Esqueceu a senha?");
-        esqueceu.setForeground(new Color(255, 255, 255));
-        esqueceu.setHorizontalAlignment(SwingConstants.LEFT);
-
-        JLabel criar = new JLabel("Criar conta");
-        criar.setForeground(new Color(255, 255, 255));
-        criar.setHorizontalAlignment(SwingConstants.RIGHT);
-
-        rodape.add(esqueceu, BorderLayout.WEST);
-        rodape.add(criar, BorderLayout.EAST);
-
         // Container central
         JPanel form = new JPanel();
         form.setLayout(new BoxLayout(form, BoxLayout.Y_AXIS));
-        form.setOpaque(false);
+        form.setOpaque(false); // Definido como transparente para sumir com o fundo cinza
         form.setPreferredSize(new Dimension(450, 400));
         form.setAlignmentX(Component.CENTER_ALIGNMENT);
 
@@ -153,8 +143,6 @@ public class TelaLogin extends JFrame {
         form.add(senhaField);
         form.add(Box.createVerticalStrut(25));
         form.add(entrarBtn);
-        form.add(Box.createVerticalStrut(20));
-        form.add(rodape);
 
         loginPanel.add(Box.createVerticalStrut(20));
         loginPanel.add(titulo);
